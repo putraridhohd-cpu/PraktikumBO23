@@ -1,4 +1,4 @@
-package MotorEncapsulation;
+package Jobsheet3.MotorEncapsulation;
 
 public class Motor23 {
     private int kecepatan = 0;

@@ -1,4 +1,4 @@
-package MotorEncapsulation;
+package Jobsheet3.MotorEncapsulation;
 
 public class MotorDemo23 {
     public static void main(String[] args) {
