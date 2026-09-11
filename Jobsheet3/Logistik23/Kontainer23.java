@@ -49,11 +49,12 @@ public class Kontainer23 {
         }
     }
 
-    public void kurangiMuatan(double berat) {
-        if (beratMuatanSaatIni - berat >= 0) {
-            beratMuatanSaatIni -= berat;
+    // Method pembongkaran muatan dengan validasi keselamatan 50%
+    public void turunkanMuatan(double berat) {
+        if (berat > 0.5 * beratMuatanSaatIni) {
+            System.out.println("Maaf, demi keselamatan, pembongkaran muatan satu kali jalan tidak boleh melebihi 50% dari muatan saat ini!");
         } else {
-            System.out.println("Gagal mengurangi muatan! Jumlah pengurangan melebihi muatan saat ini.");
+            beratMuatanSaatIni -= berat;
         }
     }
 }
