@@ -1,31 +1,30 @@
 package Jobsheet3.Logistik23;
 
+import java.util.Scanner;
+
 public class TestLogistik23 {
     public static void main(String[] args) {
-        Kontainer23 kontainerAlfa = new Kontainer23("REQ-9988", "PT maju Bersama", 5000);
+        Scanner sc = new Scanner(System.in);
+        
+        Kontainer23 kontainerAlfa = new Kontainer23("REQ-9988", "PT Valent Maju Sendiri", 5000);
 
+        System.out.println("=== SISTEM MANAJEMEN LOGISTIK KONTAINER ===");
         System.out.println("Nama pemilik kontainer: " + kontainerAlfa.getNamaPemilik());
         System.out.println("Kapasitas Maksimal: " + kontainerAlfa.getKapasitasMaksimal() + " kg");
+        System.out.println("-------------------------------------------");
 
-        System.out.println("\n Memasukkan muatan baru seberat 6000 kg ...");
-        kontainerAlfa.tambahMuatan(6000);
+        // Input Tambah Muatan Dinamis
+        System.out.print("\nMasukkan berat muatan yang ingin ditambahkan (kg): ");
+        double beratTambah = sc.nextDouble();
+        kontainerAlfa.tambahMuatan(beratTambah);
         System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatini() + " kg");
 
-        System.out.println("\n Memasukkan muatan baru seberat 4000 kg ...");
-        kontainerAlfa.tambahMuatan(4000);
+        // Input Turunkan Muatan Dinamis
+        System.out.print("\nMasukkan berat muatan yang ingin diturunkan (kg): ");
+        double beratTurun = sc.nextDouble();
+        kontainerAlfa.turunkanMuatan(beratTurun);
         System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatini() + " kg");
 
-        System.out.println("\n Memasukkan muatan baru seberat 500 kg ...");
-        kontainerAlfa.tambahMuatan(500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatini() + " kg");
-
-        System.out.println("\n Memasukkan muatan baru seberat 1500 kg ...");
-        kontainerAlfa.tambahMuatan(1500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatini() + " kg");
-
-        // Uji coba pembongkaran muatan lebih dari 50% (Saat ini muatan = 4500 kg, 50%-nya = 2250 kg)
-        System.out.println("\n Menurunkan muatan seberat 3000 kg (melebihi 50%) ...");
-        kontainerAlfa.turunkanMuatan(3000);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatini() + " kg");
+        sc.close();
     }
 }
