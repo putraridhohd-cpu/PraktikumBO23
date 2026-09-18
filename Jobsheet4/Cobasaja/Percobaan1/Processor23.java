@@ -1,4 +1,4 @@
-package Cobasaja.Percobaan1;
+package Jobsheet4.Cobasaja.Percobaan1;
 public class Processor23 {
     private String merk;
     private double cache;

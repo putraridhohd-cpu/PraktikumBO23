@@ -1,4 +1,4 @@
-package Cobasaja.Percobaan3;
+package Jobsheet4.Cobasaja.Percobaan3;
 public class Main {
     public static void main(String[] args) {
         Pegawai23 masinis = new Pegawai23("1234", "Valent Ridho");

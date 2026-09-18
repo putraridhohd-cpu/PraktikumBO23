@@ -1,4 +1,4 @@
-package Cobasaja.Percobaan2;
+package Jobsheet4.Cobasaja.Percobaan2;
 
 public class Sopir23 {
     private String nama;

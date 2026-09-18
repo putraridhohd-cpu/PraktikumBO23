@@ -1,4 +1,4 @@
-package Cobasaja.Percobaan2;
+package Jobsheet4.Cobasaja.Percobaan2;
 
 public class Mobil23 {
     private String merk;

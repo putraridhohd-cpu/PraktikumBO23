@@ -1,6 +1,6 @@
-package Cobasaja.Percobaan2;
+package Jobsheet4.Cobasaja.Percobaan2;
 
-import Cobasaja.Percobaan1.Mobil23;
+import Jobsheet4.Cobasaja.Percobaan1.Mobil23;
 
 public class Main23 {
     public static void main(String[] args) {
