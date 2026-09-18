@@ -1,4 +1,5 @@
-package Cobasaja;
+package Cobasaja.Percobaan1;
+
 public class Laptop23 {
     private String merk;
     private Processor23 proc;

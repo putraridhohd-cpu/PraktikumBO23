@@ -1,4 +1,4 @@
-package Cobasaja;
+package Cobasaja.Percobaan1;
 
 public class Mobil23 {
     private String merk;

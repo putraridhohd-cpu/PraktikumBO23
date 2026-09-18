@@ -1,6 +1,6 @@
 package Cobasaja.Percobaan2;
 
-import Cobasaja.Mobil23;
+import Cobasaja.Percobaan1.Mobil23;
 
 public class Pelanggan23 {
     private String nama;
@@ -48,5 +48,5 @@ public class Pelanggan23 {
         int totalSopir = (sopir != null) ? sopir.hitungBiayaSopir(hari) : 0;
         return totalMobil + totalSopir;
     }
-    
+
 }
