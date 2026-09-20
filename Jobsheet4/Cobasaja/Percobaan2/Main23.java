@@ -1,7 +1,5 @@
 package Jobsheet4.Cobasaja.Percobaan2;
 
-import Jobsheet4.Cobasaja.Percobaan1.Mobil23;
-
 public class Main23 {
     public static void main(String[] args) {
         Mobil23 m = new Mobil23();
