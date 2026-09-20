@@ -58,9 +58,9 @@ public class KeretaApi {
         String info = "";
         info += "Nama Kereta : " + this.nama + "\n";
         info += "Kelas       : " + this.kelas + "\n";
-        info += "Masinis     : \n" + this.masinis.info();
+        info += "Masinis     : " + this.masinis.info() + "\n";
         if (this.asisten != null) {
-            info += "Asisten     : \n" + this.asisten.info();
+            info += "Asisten     : " + this.asisten.info() + "\n";
         }
         return info;
     }
