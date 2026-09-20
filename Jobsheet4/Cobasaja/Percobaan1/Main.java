@@ -8,7 +8,7 @@ public class Main {
         l.info();
 
         Processor23 p1 = new Processor23();
-        p1.setMerk("infinix hot 40i");
+        p1.setMerk("AMD RYZEN 5");
         p1.setCache(4);
         Laptop23 l1 = new Laptop23();
         l1.setMerk("Zyrex D tech pro V1");

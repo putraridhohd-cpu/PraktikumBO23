@@ -2,8 +2,7 @@ package Jobsheet4.Cobasaja.Percobaan2;
 
 public class Sopir23 {
     private String nama;
-    private int biaya; // Gunakan huruf kecil diawal (biaya)
-
+    private int biaya; 
     public Sopir23() {
     }
 
@@ -15,8 +14,7 @@ public class Sopir23 {
         return nama;
     }
 
-    public void setBiaya(int biaya) { // Gunakan setBiaya (s kecil)
-        this.biaya = biaya;
+    public void setBiaya(int biaya) {
     }
 
     public int getBiaya() {

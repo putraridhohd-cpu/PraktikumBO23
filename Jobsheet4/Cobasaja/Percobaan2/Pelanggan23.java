@@ -43,9 +43,7 @@ public class Pelanggan23 {
     }
 
     public int hitungBiayaTotal() {
-        int totalMobil = (mobil != null) ? mobil.hitungBiayaMobil(hari) : 0;
-        int totalSopir = (sopir != null) ? sopir.hitungBiayaSopir(hari) : 0;
-        return totalMobil + totalSopir;
+       return mobil.hitungBiayaMobil(hari) + sopir.hitungBiayaSopir(hari);
     }
 
 }
