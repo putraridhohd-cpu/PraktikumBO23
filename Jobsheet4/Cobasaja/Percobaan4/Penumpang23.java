@@ -23,6 +23,4 @@ public class Penumpang23 {
         return info;
     }
 
-
-
 }
