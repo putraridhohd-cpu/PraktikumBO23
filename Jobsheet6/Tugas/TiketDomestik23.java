@@ -14,7 +14,9 @@ public class TiketDomestik23 extends TiketPesawat23 {
         System.out.println("======== Tiket Pesawat Domestik ========");
         super.tampilPesawat();
         System.out.printf("%-16s = %d\n", "Pajak Bandara", pajakBandara);
-        int totalBayar = hargaDasar + hitungBiayaBagasi() + pajakBandara;
+        
+        //  Menggunakan getHargaDasar() menggantikan hargaDasar
+        int totalBayar = getHargaDasar() + hitungBiayaBagasi() + pajakBandara;
         System.out.printf("%-16s = %d\n", "Total Bayar", totalBayar);
     }
 }

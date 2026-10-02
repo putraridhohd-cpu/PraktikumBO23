@@ -17,7 +17,9 @@ public class TiketInternasional23 extends TiketPesawat23 {
         super.tampilPesawat();
         System.out.printf("%-16s = %s\n", "Nomor Paspor", nomorPaspor);
         System.out.printf("%-16s = %d\n", "Asuransi", asuransi);
-        int totalBayar = hargaDasar + hitungBiayaBagasi() + asuransi;
+        
+        // Menggunakan getHargaDasar() menggantikan hargaDasar
+        int totalBayar = getHargaDasar() + hitungBiayaBagasi() + asuransi;
         System.out.printf("%-16s = %d\n", "Total Bayar", totalBayar);
     }
 }

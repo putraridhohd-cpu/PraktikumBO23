@@ -4,7 +4,7 @@ public class Tiket23 {
     protected String namaPenumpang;
     protected String asal;
     protected String tujuan;
-    protected int hargaDasar; 
+    private int hargaDasar;  // modfikasi Modifier diubah dari protected jadi private
 
     // Konstruktor tanpa parameter
     public Tiket23() {}
@@ -16,6 +16,11 @@ public class Tiket23 {
         this.asal = asal;
         this.tujuan = tujuan;
         this.hargaDasar = hargaDasar;
+    }
+
+    // Method Getter untuk mengakses atribut private hargaDasar
+    public int getHargaDasar() {
+        return hargaDasar;
     }
 
     public void tampilTiket() {
