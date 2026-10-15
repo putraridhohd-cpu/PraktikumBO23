@@ -29,8 +29,8 @@ public class Lensa {
     }
 
     public void info() {
-        System.out.println("Merk kamerqa : " + merk);
-        System.out.println("Cache          : " + focal + " MB");
+        System.out.println("Merk kamera  : " + merk);
+        System.out.println("Focal          : " + focal + " MB");
     }
 }
 

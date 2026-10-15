@@ -2,12 +2,12 @@ package kuis1;
 
 public class Kamera {
     private String merk;
-    private int lensa;
+    private Lensa lensa;
 
     public Kamera() {
     }
 
-    public Kamera(String merk, int lensa) {
+    public Kamera(String merk, Lensa lensa) {
         this.merk = merk;
         this.lensa = lensa;
     }
@@ -20,11 +20,11 @@ public class Kamera {
         return merk;
     }
 
-    public void setlensa(int lensa) {
+    public void setLensa(Lensa lensa) {
         this.lensa = lensa;
     }
 
-    public int getLensa() {
+    public Lensa getLensa() {
         return lensa;
     }
 
