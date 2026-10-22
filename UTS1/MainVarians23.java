@@ -8,6 +8,7 @@ public class MainVarians23 {
 
         Dosen23 dosenWali = new Dosen23("002", "Bu Vivi");
 
+        Mahasiswa23 m = new MahasiswaBeasiswa23("2341720099", "Mentari", 20, 25);
         Mahasiswa23 m1 = new MahasiswaReguler23("2341720001", "Lestari", 20);
         Mahasiswa23 m2 = new MahasiswaBeasiswa23("2341720002", "Usman", 24, 50);
         Mahasiswa23 m3 = new MahasiswaReguler23("2341720003", "Anugrah", 22);
