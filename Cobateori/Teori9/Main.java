@@ -1,4 +1,4 @@
-package Cobateori.Teori6.Teori9;
+package Cobateori.Teori9;
 
 public class Main {
     public static void main(String[] args) {
