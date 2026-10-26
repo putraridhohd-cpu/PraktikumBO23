@@ -11,7 +11,7 @@ PascaSarjana masterCumlaude = new PascaSarjana("Elok");
 // pakRektor.beriSertifikatCumlaude(sarjanaCumlaude); kasih komentar
 // pakRektor.beriSertifikatCumlaude(masterCumlaude); kasih komentar
 
-// pakRektor.beriSertifikatMawapres(sarjanaCumlaude); kita kasih komentar disini biaar gak error
+pakRektor.beriSertifikatMawapres(sarjanaCumlaude);
 pakRektor.beriSertifikatMawapres(masterCumlaude);
 
 System.out.println("hasilnya ");
