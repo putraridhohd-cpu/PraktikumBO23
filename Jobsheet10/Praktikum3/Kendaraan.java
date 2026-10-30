@@ -1,0 +1,14 @@
+package Jobsheet10.Praktikum3;
+
+public class Kendaraan {
+protected String platNomor;
+protected int tarifPerJam;
+public Kendaraan() { }
+public Kendaraan(String platNomor, int tarifPerJam) {
+this.platNomor = platNomor;
+this.tarifPerJam = tarifPerJam;
+}
+public int getTarifPerJam() {
+return tarifPerJam;
+}
+}
