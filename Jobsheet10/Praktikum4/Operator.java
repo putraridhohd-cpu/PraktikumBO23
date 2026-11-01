@@ -12,6 +12,14 @@ public class Operator {
             String tinta = laser.getJenisTinta();
             System.out.println("Mencetak dengan printer laser, tinta: " + tinta);
             System.out.println("Ukuran kertas: " + laser.getUkuranKertas());
-}
-}
+        } else if (printer instanceof PrinterDotMatrix) { 
+
+            
+            // ---> TAMBAHAN MODIFIKASI NO. 2 <---
+            PrinterDotMatrix dotMatrix = (PrinterDotMatrix) printer;
+            String tinta = dotMatrix.getJenisTinta();
+            System.out.println("Mencetak dengan printer dot matrix, tinta: " + tinta);
+            System.out.println("Ukuran kertas: " + dotMatrix.getUkuranKertas());
+        }
+    }
 }
