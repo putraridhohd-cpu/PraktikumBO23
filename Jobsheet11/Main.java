@@ -24,11 +24,15 @@ public class Main {
             System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
-        // Konstruktor Bank diperbarui tanpa parameter kapasitas
-        Bank bank = new Bank(); 
+        // Hasil Langkah 1: Konstruktor Bank tanpa parameter
+        Bank bank = new Bank();
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
+        
         bank.processMonthEnd();
+        
+        // Hasil Langkah 2: Memanggil method riwayat untuk akun A003
+        bank.printHistory("A003");
     }
 }
