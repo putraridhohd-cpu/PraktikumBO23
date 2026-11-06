@@ -24,7 +24,8 @@ public class Main {
             System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
-        Bank bank = new Bank(10);
+        // Konstruktor Bank diperbarui tanpa parameter kapasitas
+        Bank bank = new Bank(); 
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);

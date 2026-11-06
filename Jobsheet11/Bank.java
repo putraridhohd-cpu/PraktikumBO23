@@ -1,47 +1,47 @@
 package Jobsheet11;
 
-public class Bank {
-    private Account[] accounts;
-    private int count;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-    public Bank(int capacity) {
-        accounts = new Account[capacity];
-        count = 0;
+public class Bank {
+    // Mengganti Account[] dan count menjadi Map
+    private Map<String, Account> accounts = new LinkedHashMap<>();
+
+    // Konstruktor kini tidak memerlukan parameter kapasitas
+    public Bank() {
     }
 
     public boolean addAccount(Account account) {
-        if (count >= accounts.length) {
+        // Cek apakah nomor rekening sudah ada
+        if (accounts.containsKey(account.getAccountNumber())) {
             return false;
         }
-        accounts[count] = account;
-        count++;
+        accounts.put(account.getAccountNumber(), account);
         return true;
     }
 
     public Account findAccount(String accountNumber) {
-        for (int i = 0; i < count; i++) {
-            if (accounts[i].getAccountNumber().equals(accountNumber)) {
-                return accounts[i];
-            }
-        }
-        return null;
+        // Pencarian langsung menggunakan key (nomor rekening)
+        return accounts.get(accountNumber);
     }
 
     public void printAllAccounts() {
-        for (int i = 0; i < count; i++) {
-            accounts[i].printInfo();
+        // Looping menggunakan accounts.values()
+        for (Account acc : accounts.values()) {
+            acc.printInfo();
         }
     }
 
     public void printMonthlyFees() {
-        for (int i = 0; i < count; i++) {
-            System.out.println(accounts[i].getAccountNumber() + " fee: " + accounts[i].monthlyFee());
+        // Looping menggunakan accounts.values()
+        for (Account acc : accounts.values()) {
+            System.out.println(acc.getAccountNumber() + " fee: " + acc.monthlyFee());
         }
     }
 
     public void processMonthEnd() {
-        for (int i = 0; i < count; i++) {
-            Account acc = accounts[i];
+        // Looping menggunakan accounts.values()
+        for (Account acc : accounts.values()) {
             if (acc instanceof InterestBearing bearing) {
                 bearing.applyInterest();
                 System.out.println(acc.getAccountNumber() + " interest applied, new balance: " + acc.getBalance());
