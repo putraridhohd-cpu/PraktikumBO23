@@ -11,28 +11,19 @@ public class Main {
         Customer customer3 = new Customer("Rian", "0812-0000-0003");
         SavingsAccount savings = new SavingsAccount("A003", customer3, 100000, 0.02);
 
-        try {
-            savings.withdraw(70000);
-        } catch (InsufficientBalanceException e) {
-            System.out.println("Withdrawal failed: " + e.getMessage());
-        }
-
-        try {
-            savings.withdraw(30000);
-            System.out.println("Withdrawal succeeded, new balance: " + savings.getBalance());
-        } catch (InsufficientBalanceException e) {
-            System.out.println("Withdrawal failed: " + e.getMessage());
-        }
-
-        // Dihapus: Bank bank = new Bank();
-        // Ditambah: Instansiasi Bank kini memasukkan objek InMemoryAccountRepository ke dalam parameternya
+        // -- (Kode withdrawal A003 tetap sama) --
+        
         Bank bank = new Bank(new InMemoryAccountRepository());
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
         
-        bank.processMonthEnd();
+        // Menambahkan BusinessAccount
+        Customer customer4 = new Customer("Budi", "0812-0000-0004");
+        BusinessAccount business = new BusinessAccount("A004", customer4, 2000000);
+        bank.addAccount(business);
         
-        bank.printHistory("A003");
+        bank.processMonthEnd();
+        bank.printAllAccounts();
     }
 }
