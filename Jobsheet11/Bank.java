@@ -1,42 +1,47 @@
 package Jobsheet11;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Bank {
-    // Hasil Langkah 1: Menggunakan Map
-    private Map<String, Account> accounts = new LinkedHashMap<>();
+    // Dihapus: private Map<String, Account> accounts = new LinkedHashMap<>();
+    // Ditambah: Variabel repository yang menggunakan interface AccountRepository
+    private AccountRepository repository;
 
-    // Hasil Langkah 1: Konstruktor tanpa kapasitas
-    public Bank() {
+    // Ditambah: Konstruktor sekarang meminta objek yang mengimplementasikan AccountRepository
+    public Bank(AccountRepository repository) {
+        this.repository = repository;
     }
 
     public boolean addAccount(Account account) {
-        if (accounts.containsKey(account.getAccountNumber())) {
+        // Diubah: Pengecekan kunci Map diganti dengan pemanggilan findByNumber dari repository
+        if (repository.findByNumber(account.getAccountNumber()) != null) {
             return false;
         }
-        accounts.put(account.getAccountNumber(), account);
+        // Diubah: Menyimpan data menggunakan save dari repository
+        repository.save(account);
         return true;
     }
 
     public Account findAccount(String accountNumber) {
-        return accounts.get(accountNumber);
+        // Diubah: Mengambil data menggunakan findByNumber dari repository
+        return repository.findByNumber(accountNumber);
     }
 
-    public void printAllAccounts() {  // cetak laporan rekap
-        for (Account acc : accounts.values()) {
+    public void printAllAccounts() {
+        // Diubah: Looping menggunakan findAll dari repository
+        for (Account acc : repository.findAll()) {
             acc.printInfo();
         }
     }
 
-    public void printMonthlyFees() { // biaya admin bulanan nya
-        for (Account acc : accounts.values()) {
+    public void printMonthlyFees() {
+        // Diubah: Looping menggunakan findAll dari repository
+        for (Account acc : repository.findAll()) {
             System.out.println(acc.getAccountNumber() + " fee: " + acc.monthlyFee());
         }
     }
 
-    public void processMonthEnd() { // memutar/looping semua rekening,ngecek hak bunga,tambahin ke saldo lalu munculin tagihan biaya admin
-        for (Account acc : accounts.values()) {
+    public void processMonthEnd() {
+        // Diubah: Looping menggunakan findAll dari repository
+        for (Account acc : repository.findAll()) {
             if (acc instanceof InterestBearing bearing) {
                 bearing.applyInterest();
                 System.out.println(acc.getAccountNumber() + " interest applied, new balance: " + acc.getBalance());
@@ -45,15 +50,15 @@ public class Bank {
         }
     }
 
-    // Hasil Langkah 2: Menambahkan fitur cetak riwayat transaksi
-    public void printHistory(String accountNumber) { 
-        Account acc = findAccount(accountNumber); // mencari data 
-        if (acc == null) { 
+    public void printHistory(String accountNumber) {
+        // Tidak ada yang diubah karena findAccount sudah diperbarui di atas
+        Account acc = findAccount(accountNumber);
+        if (acc == null) {
             System.out.println("Account not found: " + accountNumber);
             return;
         }
-        for (Transaction t : acc.getHistory()) { // ambil riwayat data transaksi (get) dan membaca riwayat degan for
-            System.out.println(accountNumber + " " + t); 
+        for (Transaction t : acc.getHistory()) {
+            System.out.println(accountNumber + " " + t);
         }
     }
 }
