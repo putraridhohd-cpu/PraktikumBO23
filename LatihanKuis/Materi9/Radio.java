@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 // Class Radio: HANYA me-extends Elektronik, TIDAK me-implements interface apapun
 public class Radio extends Elektronik {

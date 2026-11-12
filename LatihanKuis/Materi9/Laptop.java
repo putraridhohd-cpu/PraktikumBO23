@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 // Class Laptop: 
 // 1. ADALAH Elektronik (extends Elektronik) -> Cuma boleh extends 1 class

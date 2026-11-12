@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 // Interface 2: Menandakan perangkat yang BISA terhubung ke WiFi
 public interface WifiConnectable {

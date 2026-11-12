@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 public class Main {
     public static void main(String[] args) {

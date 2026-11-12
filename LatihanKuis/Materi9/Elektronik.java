@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 // Abstract Class: Cetak biru induk, TIDAK BISA dibuat objeknya langsung (tidak bisa di-new)
 public abstract class Elektronik {

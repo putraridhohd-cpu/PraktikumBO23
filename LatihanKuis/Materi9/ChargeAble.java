@@ -1,4 +1,4 @@
-package LatihanKuis.kuis4;
+package LatihanKuis.Materi9;
 
 // Interface 1: Menandakan perangkat yang BISA diisi ulang baterainya (Kontrak Kemampuan)
 public interface ChargeAble {
