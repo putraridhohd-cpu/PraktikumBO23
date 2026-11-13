@@ -1,17 +1,14 @@
 package kuis2;
 
-/** Memeriksa kondisi barang saat dikembalikan penyewa. */
 public class PemeriksaBarang {
-    public void periksa(Perlengkapan barang) {
-        System.out.print("Pemeriksaan " + barang.getKode() + ": ");
-        if (barang instanceof Tenda) {
-            Tenda t = (Tenda) barang;
-            System.out.println(t.cekFrame());
-        } else if (barang instanceof Carrier) {
-            Carrier c = (Carrier) barang;
-            System.out.println(c.cekResleting());
-        } else {
-            System.out.println("cek kondisi umum");
-        }
+    
+    // ==========================================
+    // MODIFIKASI: REFACTORING METHOD periksa()
+    // Tidak ada lagi rantai instanceof dan downcasting.
+    // Cukup panggil barang.catatanPemeriksaan().
+    // ==========================================
+    public static void periksa(Perlengkapan barang) {
+        // Output format: Pemeriksaan [Kode Barang]: [Hasil Catatan]
+        System.out.println("Pemeriksaan " + barang.getKode() + ": " + barang.catatanPemeriksaan());
     }
 }

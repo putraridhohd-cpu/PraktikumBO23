@@ -1,31 +1,23 @@
 package kuis2;
 
-public class Carrier extends Perlengkapan implements Dicuci {
-    private int volumeLiter;
+public class Carrier extends Perlengkapan {
+    private int kapasitasLiter;
 
-    public Carrier(String kode, String nama, int tarifHarian, int volumeLiter) {
-        super(kode, nama, tarifHarian);
-        this.volumeLiter = volumeLiter;
-    }
-
-    public int getVolumeLiter() { return volumeLiter; }
-
-    @Override
-    protected int biayaTambahan(int hari) {
-        return 0;
-    }
-
-    @Override
-    public String getKategori() {
-        return "Carrier";
-    }
-
-    @Override
-    public int biayaCuci() {
-        return 10000;
+    public Carrier(String kode, String nama, double hargaSewa, int kapasitasLiter) {
+        super(kode, nama, hargaSewa);
+        this.kapasitasLiter = kapasitasLiter;
     }
 
     public String cekResleting() {
-        return "cek resleting & tali bahu carrier " + volumeLiter + "L";
+        return "cek fungsi resleting & jahitan tali";
+    }
+
+    // ==========================================
+    // MODIFIKASI: Implementasi catatanPemeriksaan()
+    // Mengembalikan method cekResleting() sesuai instruksi
+    // ==========================================
+    @Override
+    public String catatanPemeriksaan() {
+        return cekResleting();
     }
 }
