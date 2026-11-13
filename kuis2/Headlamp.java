@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 public class Headlamp extends Perlengkapan {
     private static final int BIAYA_BATERAI = 3000;

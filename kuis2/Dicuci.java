@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Kemampuan: barang wajib dicuci setelah disewa. */
 public interface Dicuci {

@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 public class Tenda extends Perlengkapan implements Dicuci, Diasuransikan {
     private int kapasitas;

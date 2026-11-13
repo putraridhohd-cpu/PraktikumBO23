@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Memeriksa kondisi barang saat dikembalikan penyewa. */
 public class PemeriksaBarang {

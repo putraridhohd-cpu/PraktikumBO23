@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /**
  * Induk semua barang yang bisa disewa.

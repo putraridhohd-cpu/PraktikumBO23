@@ -1,5 +1,4 @@
-package id.ac.polinema.sewagear;
-
+package kuis2;
 import java.util.Collection;
 
 /** Tempat penyimpanan data barang. LayananSewa hanya mengenal interface ini. */

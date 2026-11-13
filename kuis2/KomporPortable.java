@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 public class KomporPortable extends Perlengkapan implements Diasuransikan {
     private static final int HARGA_GAS_PER_HARI = 5000;

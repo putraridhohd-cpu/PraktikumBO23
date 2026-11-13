@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 public class Carrier extends Perlengkapan implements Dicuci {
     private int volumeLiter;

@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Aturan potongan harga untuk satu jenis member. */
 public interface SkemaPotongan {

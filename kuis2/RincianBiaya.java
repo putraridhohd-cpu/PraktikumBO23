@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Hasil perhitungan biaya satu kali sewa. */
 public class RincianBiaya {

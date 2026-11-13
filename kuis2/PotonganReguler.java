@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 public class PotonganReguler implements SkemaPotongan {
     @Override

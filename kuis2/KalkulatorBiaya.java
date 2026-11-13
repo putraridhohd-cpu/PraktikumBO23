@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 import java.util.HashMap;
 import java.util.Map;

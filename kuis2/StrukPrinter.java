@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Satu tugas: mencetak struk satu transaksi. */
 public class StrukPrinter {

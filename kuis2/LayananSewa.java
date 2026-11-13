@@ -1,4 +1,4 @@
-package id.ac.polinema.sewagear;
+package kuis2;
 
 /** Mengoordinasikan alur sewa dan pengembalian barang. */
 public class LayananSewa {
