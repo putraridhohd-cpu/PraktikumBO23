@@ -1,21 +1,40 @@
 package kuis2;
 
-public class Tenda extends Perlengkapan {
+public class Tenda extends Perlengkapan implements Dicuci, Diasuransikan {
     private int kapasitas;
 
-    public Tenda(String kode, String nama, double hargaSewa, int kapasitas) {
-        super(kode, nama, hargaSewa);
+    public Tenda(String kode, String nama, int tarifHarian, int kapasitas) {
+        super(kode, nama, tarifHarian);
         this.kapasitas = kapasitas;
     }
 
-    public String cekFrame() {
-        return "cek kelengkapan frame & pasak"; 
+    public int getKapasitas() { return kapasitas; }
+
+    @Override
+    protected int biayaTambahan(int hari) {
+        return 0;
     }
 
-    // ==========================================
-    // MODIFIKASI: Implementasi catatanPemeriksaan()
-    // Mengembalikan method cekFrame() sesuai instruksi
-    // ==========================================
+    @Override
+    public String getKategori() {
+        return "Tenda";
+    }
+
+    @Override
+    public int biayaCuci() {
+        return 15000;
+    }
+
+    @Override
+    public int premiAsuransi(int hari) {
+        return 2000 * hari;
+    }
+
+    public String cekFrame() {
+        return "cek frame & pasak tenda (" + kapasitas + " orang)";
+    }
+
+    // [MODIFIKASI SOAL 12] Implementasi catatan pemeriksaan khas Tenda
     @Override
     public String catatanPemeriksaan() {
         return cekFrame();

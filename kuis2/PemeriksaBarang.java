@@ -1,14 +1,10 @@
 package kuis2;
 
+/** Memeriksa kondisi barang saat dikembalikan penyewa. */
 public class PemeriksaBarang {
-    
-    // ==========================================
-    // MODIFIKASI: REFACTORING METHOD periksa()
-    // Tidak ada lagi rantai instanceof dan downcasting.
-    // Cukup panggil barang.catatanPemeriksaan().
-    // ==========================================
-    public static void periksa(Perlengkapan barang) {
-        // Output format: Pemeriksaan [Kode Barang]: [Hasil Catatan]
+    // [MODIFIKASI SOAL 12] Tanpa instanceof dan tanpa casting:
+    // cukup memanggil barang.catatanPemeriksaan() (polimorfisme).
+    public void periksa(Perlengkapan barang) {
         System.out.println("Pemeriksaan " + barang.getKode() + ": " + barang.catatanPemeriksaan());
     }
 }

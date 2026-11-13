@@ -1,32 +1,43 @@
 package kuis2;
 
+/**
+ * Induk semua barang yang bisa disewa.
+ * Abstract: tidak ada "perlengkapan" yang wujudnya umum, yang ada Tenda, Carrier, dsb.
+ */
 public abstract class Perlengkapan {
     protected String kode;
     protected String nama;
-    protected double hargaSewa;
+    protected int tarifHarian;
+    private boolean tersedia = true;
 
-    public Perlengkapan(String kode, String nama, double hargaSewa) {
+    public Perlengkapan(String kode, String nama, int tarifHarian) {
         this.kode = kode;
         this.nama = nama;
-        this.hargaSewa = hargaSewa;
+        this.tarifHarian = tarifHarian;
     }
 
-    public String getKode() {
-        return kode;
+    public String getKode() { return kode; }
+    public String getNama() { return nama; }
+    public int getTarifHarian() { return tarifHarian; }
+    public boolean isTersedia() { return tersedia; }
+    public void setTersedia(boolean tersedia) { this.tersedia = tersedia; }
+
+    /** Biaya sewa = tarif harian x lama hari + biaya tambahan khas tiap barang. */
+    public int hitungSewa(int hari) {
+        return tarifHarian * hari + biayaTambahan(hari);
     }
 
-    public String getNama() {
-        return nama;
-    }
+    /** Biaya tambahan khas tiap jenis barang (boleh 0). */
+    protected abstract int biayaTambahan(int hari);
 
-    public double getHargaSewa() {
-        return hargaSewa;
-    }
+    /** Nama kategori barang, misalnya "Tenda". */
+    public abstract String getKategori();
 
-    // ==========================================
-    // MODIFIKASI: PENAMBAHAN METHOD ABSTRACT BARU
-    // Method ini memaksa semua kelas anak (Tenda, Carrier, dll)
-    // untuk memiliki cara pemeriksaannya masing-masing.
-    // ==========================================
+    // [MODIFIKASI SOAL 12] Method abstract baru: setiap jenis barang wajib menyebutkan
+    // catatan pemeriksaannya sendiri, sehingga PemeriksaBarang tidak perlu instanceof/casting.
     public abstract String catatanPemeriksaan();
+
+    public String info() {
+        return kode + " - " + nama + " [" + getKategori() + "] Rp" + tarifHarian + "/hari";
+    }
 }

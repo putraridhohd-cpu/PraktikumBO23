@@ -2,19 +2,39 @@ package kuis2;
 
 public class Main {
     public static void main(String[] args) {
-        // ... (Kode Inisialisasi Layanan, Repository, dll milik dosen Anda) ...
-        
-        // ... (Pemanggilan transaksi, dll) ...
+        // Menyiapkan aturan potongan per jenis member
+        KalkulatorBiaya kalkulator = new KalkulatorBiaya();
+        kalkulator.daftarkanPotongan(JenisMember.REGULER, new PotonganReguler());
+        kalkulator.daftarkanPotongan(JenisMember.MAHASISWA, new PotonganMahasiswa());
+        kalkulator.daftarkanPotongan(JenisMember.KOMUNITAS, new PotonganKomunitas());
 
+        LayananSewa layanan = new LayananSewa(new InMemoryGearRepository(), kalkulator,
+                new StrukPrinter(), new PemeriksaBarang());
+
+        // Data barang
+        layanan.tambahBarang(new Tenda("TD01", "Tenda Dome", 50000, 4));
+        layanan.tambahBarang(new Carrier("CR01", "Carrier Explorer", 35000, 60));
+        layanan.tambahBarang(new KomporPortable("KP01", "Kompor Lipat", 20000));
+        layanan.tambahBarang(new Headlamp("HL01", "Headlamp LED", 10000));
+
+        // Data penyewa
+        Penyewa raka = new Penyewa("Raka", "0812-1111-0001", JenisMember.MAHASISWA);
+        Penyewa sinta = new Penyewa("Sinta", "0812-1111-0002", JenisMember.KOMUNITAS);
+        Penyewa dewi = new Penyewa("Dewi", "0812-1111-0003", JenisMember.REGULER);
+
+        // Skenario
+        layanan.tampilkanKatalog();
+        layanan.sewa(raka, "TD01", 3);
+        layanan.sewa(sinta, "KP01", 2);
+        layanan.sewa(dewi, "TD01", 1);
+        layanan.sewa(dewi, "XX99", 1);
+        layanan.sewa(dewi, "HL01");
+        layanan.kembalikan("TD01");
+        layanan.kembalikan("KP01");
+        layanan.tampilkanKatalog();
         layanan.laporanPendapatan();
-        
-        // ==========================================
-        // MODIFIKASI MAIN: Tambahan sesuai instruksi soal di kertas
-        // ==========================================
-        layanan.kembalikan("HL01"); 
-        
-        // Keterangan: Jika layanan.kembalikan("HL01") dipanggil, 
-        // sistem seharusnya memanggil PemeriksaBarang.periksa(barang) di dalam logikanya,
-        // dan menghasilkan output: "Pemeriksaan HL01: cek nyala lampu & baterai"
+
+        // [MODIFIKASI SOAL 12] Tambahan wajib dari soal
+        layanan.kembalikan("HL01");
     }
 }
