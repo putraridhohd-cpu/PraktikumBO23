@@ -26,4 +26,10 @@ public class KomporPortable extends Perlengkapan implements Diasuransikan {
     public String cekRegulator() {
         return "cek regulator & selang gas";
     }
+
+    // [MODIFIKASI SOAL 12] Implementasi catatan pemeriksaan khas KomporPortable
+    @Override
+    public String catatanPemeriksaan() {
+        return cekRegulator();
+    }
 }

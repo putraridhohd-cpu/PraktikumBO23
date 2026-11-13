@@ -1,5 +1,6 @@
 package id.ac.polinema.sewagear;
 
+
 public class Headlamp extends Perlengkapan {
     private static final int BIAYA_BATERAI = 3000;
 
@@ -16,5 +17,11 @@ public class Headlamp extends Perlengkapan {
     @Override
     public String getKategori() {
         return "Penerangan";
+    }
+
+    // [MODIFIKASI SOAL 12] Implementasi catatan pemeriksaan khas Headlamp
+    @Override
+    public String catatanPemeriksaan() {
+        return "cek nyala lampu & baterai";
     }
 }

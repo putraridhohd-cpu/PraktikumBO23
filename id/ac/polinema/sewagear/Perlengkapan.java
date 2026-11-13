@@ -1,5 +1,6 @@
 package id.ac.polinema.sewagear;
 
+
 /**
  * Induk semua barang yang bisa disewa.
  * Abstract: tidak ada "perlengkapan" yang wujudnya umum, yang ada Tenda, Carrier, dsb.
@@ -32,6 +33,10 @@ public abstract class Perlengkapan {
 
     /** Nama kategori barang, misalnya "Tenda". */
     public abstract String getKategori();
+
+    // [MODIFIKASI SOAL 12] Method abstract baru: setiap jenis barang wajib menyebutkan
+    // catatan pemeriksaannya sendiri, sehingga PemeriksaBarang tidak perlu instanceof/casting.
+    public abstract String catatanPemeriksaan();
 
     public String info() {
         return kode + " - " + nama + " [" + getKategori() + "] Rp" + tarifHarian + "/hari";

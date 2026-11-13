@@ -1,5 +1,6 @@
 package id.ac.polinema.sewagear;
 
+
 public class Carrier extends Perlengkapan implements Dicuci {
     private int volumeLiter;
 
@@ -27,5 +28,11 @@ public class Carrier extends Perlengkapan implements Dicuci {
 
     public String cekResleting() {
         return "cek resleting & tali bahu carrier " + volumeLiter + "L";
+    }
+
+    // [MODIFIKASI SOAL 12] Implementasi catatan pemeriksaan khas Carrier
+    @Override
+    public String catatanPemeriksaan() {
+        return cekResleting();
     }
 }

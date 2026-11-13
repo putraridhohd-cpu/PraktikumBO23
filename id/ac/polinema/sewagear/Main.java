@@ -1,5 +1,6 @@
 package id.ac.polinema.sewagear;
 
+
 public class Main {
     public static void main(String[] args) {
         // Menyiapkan aturan potongan per jenis member
@@ -33,5 +34,8 @@ public class Main {
         layanan.kembalikan("KP01");
         layanan.tampilkanKatalog();
         layanan.laporanPendapatan();
+
+        // [MODIFIKASI SOAL 12] Tambahan wajib dari soal
+        layanan.kembalikan("HL01");
     }
 }

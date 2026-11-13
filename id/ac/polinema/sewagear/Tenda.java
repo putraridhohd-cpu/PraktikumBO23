@@ -33,4 +33,10 @@ public class Tenda extends Perlengkapan implements Dicuci, Diasuransikan {
     public String cekFrame() {
         return "cek frame & pasak tenda (" + kapasitas + " orang)";
     }
+
+    // [MODIFIKASI SOAL 12] Implementasi catatan pemeriksaan khas Tenda
+    @Override
+    public String catatanPemeriksaan() {
+        return cekFrame();
+    }
 }
