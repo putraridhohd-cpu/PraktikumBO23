@@ -31,7 +31,7 @@ public class Main {
         layanan.sewa(dewi, "XX99", 1);
         layanan.sewa(dewi, "HL01");
         layanan.kembalikan("TD01");
-        layanan.kembalikan("KP01");
+        layanan.kembalikan("KP01"); // disini ada jalanin method kembalikan kode KP01
         layanan.tampilkanKatalog();
         layanan.laporanPendapatan();
 

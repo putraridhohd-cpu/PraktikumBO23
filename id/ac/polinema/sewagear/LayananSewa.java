@@ -51,14 +51,14 @@ public class LayananSewa {
     }
 
     public void kembalikan(String kode) {
-        Perlengkapan barang = repository.cari(kode);
+        Perlengkapan barang = repository.cari(kode); // cari barang KP01
         if (barang == null || barang.isTersedia()) {
             System.out.println("Gagal: " + kode + " tidak sedang disewa");
             return;
         }
-        pemeriksa.periksa(barang);
+        pemeriksa.periksa(barang); // serahkan ke PemeriksaBarang
         barang.setTersedia(true);
-        System.out.println(kode + " sudah kembali dan tersedia");
+        System.out.println(kode + " sudah kembali dan tersedia"); 
     }
 
     public void laporanPendapatan() {
